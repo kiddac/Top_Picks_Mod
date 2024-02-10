@@ -18,3 +18,5 @@ Edit cron file so the scripts run at scheduled time
 */10 * * * * /usr/script/skypicker.sh
 
 Reboot gui
+
+![image](https://github.com/kiddac/Top_Picks_Mod/assets/6818561/bb777d02-1c50-4a81-ad78-7c3233bf817c)
