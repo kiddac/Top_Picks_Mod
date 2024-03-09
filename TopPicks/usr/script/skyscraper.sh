@@ -9,5 +9,7 @@ echo 1 > /proc/sys/vm/drop_caches
 echo 2 > /proc/sys/vm/drop_caches
 echo 3 > /proc/sys/vm/drop_caches
 
-python /etc/enigma2/slyk/picker.py
+if test -f /etc/enigma2/slyk/image_awk_scrape.json; then
+    python /etc/enigma2/slyk/picker.py
+fi
 exit 0

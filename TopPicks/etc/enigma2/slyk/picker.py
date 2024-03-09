@@ -32,6 +32,7 @@ def create_background(background):
     backgroundw, backgroundh = background.size
     plainsizew, plainsizeh = plainbg.size
     plainbg.paste(background, (plainsizew - backgroundw, 0), mask)
+    plainbg.save(skin_folder + image_folder + "q.png", quality=85)
     plainbg = plainbg.convert('RGB')
     plainbg.save(skin_folder + image_folder + "hero.jpg", quality=85)
 
@@ -149,122 +150,104 @@ except:
     sys.stderr.write("Please run skyscraper.sh before running the picker script.\n")
     sys.exit()
 
+if skin.strip() == "slyk-onyx-1080" or skin.strip() == "slyk-onyx-720":
+    number_of_images = 10
+    portrait_pics = [1, 2, 3, 4, 5, 6, 7]
+    landscape_pics = [8, 9, 10]
+    background = False
+    backgroundsize = []
+    logos = True
+    logo_valign = "top"
+    logo_halign = "center"
+    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    image_folder = "whatson-gfx/"
+    image_prefix = "whatson"
+
 if skin.strip() == "slyk-onyx-1080":
     skin_size = 1080
-    number_of_images = 10
-
     portrait_size = [202, 270]
-    portrait_pics = [1, 2, 3, 4, 5, 6, 7]
-
     landscape_size = [407, 241]
-    landscape_pics = [8, 9, 10]
-
-    background = False
-    backgroundsize = []
-
-    logos = True
     logo_height = 18
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
     skin_folder = "/usr/share/enigma2/slyk-onyx-1080/"
-    image_folder = "whatson-gfx/"
-    image_prefix = "whatson"
 
-elif skin.strip() == "slyk-onyx-720":
+if skin.strip() == "slyk-onyx-720":
     skin_size = 720
-    number_of_images = 10
-
     portrait_size = [134, 180]
-    portrait_pics = [1, 2, 3, 4, 5, 6, 7]
-
     landscape_size = [270, 161]
-    landscape_pics = [8, 9, 10]
-
-    background = False
-    backgroundsize = []
-
-    logos = True
     logo_height = 12
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
     skin_folder = "/usr/share/enigma2/slyk-onyx-720/"
-    image_folder = "whatson-gfx/"
-    image_prefix = "whatson"
 
-elif skin.strip() == "slyk-1080-r19":
+if skin.strip() == "slyk-1080-r19" or skin.strip() == "slyk-720-r19":
+    number_of_images = 12
+    portrait_pics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    landscape_size = []
+    landscape_pics = []
+    background = True
+    logos = True
+    logo_valign = "top"
+    logo_halign = "center"
+    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    image_folder = "toppicks/screens2/"
+    image_prefix = "toppicks"
+
+if skin.strip() == "slyk-1080-r19":
     skin_size = 1080
-    number_of_images = 12
-
     portrait_size = [246, 328]
-    portrait_pics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-    landscape_size = []
-    landscape_pics = []
-
-    background = True
     backgroundsize = [1280, 720]
-
-    logos = True
     logo_height = 21
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
     skin_folder = "/usr/share/enigma2/slyk-1080-r19/"
-    image_folder = "toppicks/screens2/"
-    image_prefix = "toppicks"
 
-elif skin.strip() == "slyk-720-r19":
+if skin.strip() == "slyk-720-r19":
     skin_size = 720
-    number_of_images = 12
-
     portrait_size = [164, 219]
-    portrait_pics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-    landscape_size = []
-    landscape_pics = []
-
-    background = True
     backgroundsize = [853, 480]
-
-    logos = True
     logo_height = 14
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
     skin_folder = "/usr/share/enigma2/slyk-720-r19/"
-    image_folder = "toppicks/screens2/"
-    image_prefix = "toppicks"
 
-elif skin.strip() == "slyk-q-1080":
+if skin.strip() == "slyk-q-1080" or skin.strip() == "Q-FHD" or skin.strip() == "Q-Purple-FHD" or skin.strip() == "Q-DarkBlue-FHD" or skin.strip() == "slyk-q-de-1080" or \
+        skin.strip() == "Cosmos" or skin.strip() == "slyk-q" or skin.strip() == "Q-GradientPurple-FHD":
     skin_size = 1080
     number_of_images = 10
-
     portrait_size = [240, 320]
     portrait_pics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
     landscape_size = []
     landscape_pics = []
-
     background = True
     backgroundsize = [1280, 720]
-
     logos = True
     logo_height = 21
     logo_valign = "top"
     logo_halign = "center"
     picons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    skin_folder = "/usr/share/enigma2/slyk-q-1080/"
     image_folder = "q-toppicks/"
     image_prefix = "toppicks"
 
-elif skin.strip() == "slyk-q-720":
+if skin.strip() == "slyk-q-1080":
+    skin_folder = "/usr/share/enigma2/slyk-q-1080/"
+
+if skin.strip() == "Q-FHD":
+    skin_folder = "/usr/share/enigma2/Q-FHD/"
+
+if skin.strip() == "Q-Purple-FHD":
+    skin_folder = "/usr/share/enigma2/Q-Purple-FHD/"
+
+if skin.strip() == "Q-DarkBlue-FHD":
+    skin_folder = "/usr/share/enigma2/Q-DarkBlue-FHD/"
+
+if skin.strip() == "slyk-q-de-1080":
+    skin_folder = "/usr/share/enigma2/slyk-q-de-1080/"
+
+if skin.strip() == "Cosmos":
+    skin_folder = "/usr/share/enigma2/Cosmos/"
+
+if skin.strip() == "Q-GradientPurple-FHD":
+    skin_folder = "/usr/share/enigma2/Q-GradientPurple-FHD/"
+
+if skin.strip() == "slyk-q":
+    skin_folder = "/usr/share/enigma2/slyk-q/"
+
+
+if skin.strip() == "slyk-q-720":
     skin_size = 720
     number_of_images = 10
 
@@ -287,51 +270,33 @@ elif skin.strip() == "slyk-q-720":
     image_folder = "q-toppicks/"
     image_prefix = "toppicks"
 
-elif skin.strip() == "vskin-1080" or skin.strip() == "vskin-bolt-1080" or skin.strip() == "vskin-red-1080":
+if skin.strip() == "vskin-1080" or skin.strip() == "vskin-bolt-1080" or skin.strip() == "vskin-red-1080" or \
+        skin.strip() == "vskin-720" or skin.strip() == "vskin-bolt-720" or skin.strip() == "vskin-red-720" or \
+        skin.strip() == "vskin-hd":
+
+    number_of_images = 4
+    portrait_size = []
+    portrait_pics = []
+    landscape_pics = [1, 2, 3, 4]
+    background = False
+    backgroundsize = []
+    logos = False
+    logo_valign = "top"
+    logo_halign = "center"
+    picons = []
+    skin_folder = "/usr/share/enigma2/"
+    image_folder = "vskin-gfx/"
+    image_prefix = "whatson"
+
+if skin.strip() == "vskin-1080" or skin.strip() == "vskin-bolt-1080" or skin.strip() == "vskin-red-1080":
     skin_size = 1080
-    number_of_images = 4
-
-    portrait_size = []
-    portrait_pics = []
-
     landscape_size = [252, 189]
-    landscape_pics = [1, 2, 3, 4]
-
-    background = False
-    backgroundsize = []
-
-    logos = False
     logo_height = 21
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = []
 
-    skin_folder = "/usr/share/enigma2/"
-    image_folder = "vskin-gfx/"
-    image_prefix = "whatson"
-
-elif skin.strip() == "vskin-720" or skin.strip() == "vskin-bolt-720" or skin.strip() == "vskin-red-720":
+if skin.strip() == "vskin-720" or skin.strip() == "vskin-bolt-720" or skin.strip() == "vskin-red-720" or skin.strip() == "vskin-hd":
     skin_size = 720
-    number_of_images = 4
-
-    portrait_size = []
-    portrait_pics = []
-
     landscape_size = [168, 126]
-    landscape_pics = [1, 2, 3, 4]
-
-    background = False
-    backgroundsize = []
-
-    logos = False
     logo_height = 14
-    logo_valign = "top"
-    logo_halign = "center"
-    picons = []
-
-    skin_folder = "/usr/share/enigma2/"
-    image_folder = "vskin-gfx/"
-    image_prefix = "whatson"
 
 
 now = datetime.now().timestamp()

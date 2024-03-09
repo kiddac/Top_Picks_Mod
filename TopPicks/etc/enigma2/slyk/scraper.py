@@ -26,7 +26,7 @@ except Exception as e:
     print(e)
 
 
-#png references
+# png references
 movies = {
     "1409": "sky-cinema",  # "sky-cinema-premiere"
     "4033": "sky-cinema",  # "sky-cinema-middle-earth"
@@ -96,7 +96,10 @@ kids = {
 }
 
 
-allchannels = {**movies, **entertainment, **documentaries, **crime, **nature, **kids, }
+choice = [movies, entertainment, documentaries]
+
+allchannels = {key:val for d in choice for key,val in d.items()}
+
 
 urls = []
 
