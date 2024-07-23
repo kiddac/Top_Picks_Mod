@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import json
@@ -98,7 +99,7 @@ kids = {
 
 choice = [movies, entertainment, documentaries]
 
-allchannels = {key:val for d in choice for key,val in d.items()}
+allchannels = {key: val for d in choice for key, val in d.items()}
 
 
 urls = []

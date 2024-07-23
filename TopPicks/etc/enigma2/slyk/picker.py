@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from PIL import Image
 from datetime import datetime
 
@@ -298,8 +301,12 @@ if skin.strip() == "vskin-720" or skin.strip() == "vskin-bolt-720" or skin.strip
     landscape_size = [168, 126]
     logo_height = 14
 
+if pythonVer == 2:
+    now = (datetime.now() - datetime(1970, 1, 1)).total_seconds()
+else:
+    now = datetime.now().timestamp()
 
-now = datetime.now().timestamp()
+
 filename = '/etc/enigma2/slyk/shortlist.json'
 
 if tfile == []:
